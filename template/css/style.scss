@@ -1,0 +1,99 @@
+
+//Header
+.header{
+    background-image: url(../img/ellipse_4.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 760px;
+    font-size: 13px;
+    &__search{
+        // display: flex;
+    }
+    &__search__item{
+        padding-left: 10px;
+        &__form input{
+            border-radius: 10px;
+        }
+    }
+}
+//End header
+//Content Info
+
+//End content info
+// Footer
+.footer{
+    min-height: 320px;
+    background: linear-gradient(to right,#5265c1,#77bfd8);
+    color: white;
+}
+.footer__logo{
+    padding-top: 20px;
+}
+.footer__contact__detail{
+    padding-inline-start: 0px;
+    list-style: none;
+    position: relative;
+}
+.footer__contact__detail li{
+    padding-top: 20px;
+    font-size: 13px;
+    padding-left: 30px;
+}
+.footer__contact__icon{
+    padding: 20px 0px;
+}
+.footer__category{
+    padding-left: 30px;
+}
+.footer__category__title,.footer__face{
+    padding-top: 50px;
+}
+.footer__category__item{
+    padding-inline-start: 0px;
+    list-style: none;
+    font-size: 20px;
+    padding-top: 25px;
+}
+.footer__category__item li{ 
+    padding-top: 10px;
+}
+.footer__category__item a{
+    color: white;
+}
+.footer__contact::after{
+    content: "";
+    width: 1px;
+    height: 225px;
+    background-color: white;
+    position: absolute;
+    top : 55px;
+    right: 0px;
+}
+.footer__category::after{
+    content: "";
+    width: 1px;
+    height: 225px;
+    background-color: white;
+    position: absolute;
+    top : 55px;
+    right: 10px;
+}
+.footer__face div{
+    margin-top: 18px;
+}
+.footer__contact__detail__add::before{
+    content: url('../img/house.png');
+    position: absolute;
+    left: 0px;
+}
+.footer__contact__detail__email::before{
+    content: url('../img/mail.png');
+    position: absolute;
+    left: 0px;
+}
+.footer__contact__detail__phone::before{
+    content: url('../img/phone.png');
+    position: absolute;
+    left: 0px;
+}
+// End footer
