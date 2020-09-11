@@ -17,57 +17,75 @@
         <header class="header container-fluid" id="header">
             <div class="container">
                 <nav class="navbar navbar-expand-sm navbar-light">
-                    <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                    <div class="navbar-brand">
+                        <a href="#"><img src="img/logo.png" alt=""></a>
+                    </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3 header__search">
-                                <img class="header__search__item" src="img/youtube.png" alt="">
-                                <img class="header__search__item" src="img/FB.png" alt="">
-                                <form action="" class="header__search__item header__search__item__form">
-                                    <input type="text" name="search" id="">
-                                </form>
-                            </div>
+                    <div class="header__main">
+                        <div class="header__search">
+                            <img class="header__search__item" src="img/youtube.png" alt="">
+                            <img class="header__search__item" src="img/FB.png" alt="">
+                            <form action="" class="header__search__item header__search__item__form">
+                                <input type="text" name="search" id="">
+                            </form>
                         </div>
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">TRANG CHỦ <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">GIẢI PHÁP MARKETING</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">KIẾN THỨC</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">BÁO CÁO INSIGHTS </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CASE STUDY</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">LIÊN HỆ</a>
-                            </li>
-                        </ul>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto header__nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">GIẢI PHÁP MARKETING</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">KIẾN THỨC</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">BÁO CÁO INSIGHTS </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">CASE STUDY</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">LIÊN HỆ</a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                              </form>
+                        </div>
                     </div>
+
                 </nav>
+                <!-- <div class="img__top__grid">
+                    <div class="img__top__wapper">        
+                        <img class="img__top" src="img/top element.png" alt="Top Element">
+                    </div>
+                </div> -->
             </div>
 
         </header>
         <div class="page-main">
-            <section class="section section-content-info">
-                <h1><span>PHAR</span><span>MARKETING</span></h1>
-                <h3>GIẢI PHÁP MARKETING Y DƯỢC</h3>
-                <a href="">FIND OUR MORE</a>
+            <section class="section content__info">
+                <div class="container">
+                    <p class="content__info__title"><span class="phar">PHAR </span><span class="marketing">MARKETING</span></p>
+                    <p class="content__info__giaiphap">GIẢI PHÁP MARKETING Y DƯỢC</p>
+                    <a class="content__info__find">FIND OUT MORE</a>
+                </div>
             </section>
-            <section class="section section-usp">
-                <h2>USP</h2>
-                <h2>CỦA PHARMAKETING</h2>
+            <section class="section usp">
+                <div class="container">
+                    <p class="usp__title">USP</p>
+                    <p class="usp__title__sub">CỦA PHARMAKETING</p>
+                    <div class="usp__content__group">
+                        <div class="row"></div>
+                    </div>
+                </div>
             </section>
             <section class="section section-you-need"></section>
             <section class="section section-solution"></section>

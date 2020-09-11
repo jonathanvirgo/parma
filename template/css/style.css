@@ -1,15 +1,140 @@
+@font-face {
+  font-family: NeoSansIntel;
+  src: url(../fonts/UTM-Neo-Sans-Intel.ttf);
+}
+@font-face {
+  font-family: SVNGilroy;
+  src: url(../fonts/SVN-Gilroy.otf);
+}
 .header {
-  background-image: url(../img/ellipse_4.png);
+  background-image: url(../img/top_element.png);
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 760px;
+  min-height: 755px;
   font-size: 13px;
 }
+.header__search {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid black;
+  padding-bottom: 18px;
+  padding-top: 16px;
+}
 .header__search__item {
-  padding-left: 10px;
+  padding-left: 25px;
+}
+.header__search__item__form {
+  padding-top: 6px;
 }
 .header__search__item__form input {
   border-radius: 10px;
+  border: none;
+  height: 20px;
+  width: 220px;
+}
+.header__main {
+  flex-grow: 1;
+  margin-left: 50px;
+}
+.header .navbar {
+  padding: 0;
+}
+.header .navbar-brand {
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+}
+.header .nav-item {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: NeoSansIntel;
+}
+.header .nav-item a:hover {
+  color: white !important;
+  text-decoration: underline;
+}
+.header .navbar-nav {
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.header .navbar-nav li:first-child a {
+  padding-left: 0px;
+}
+.header .navbar-nav li:last-child a {
+  padding-right: 0px;
+}
+.header .nav-link {
+  padding: 0;
+  padding-top: 14px;
+  color: black !important;
+}
+.header .collapse .form-inline {
+  display: none;
+}
+.header .img__top__grid {
+  padding-top: 95px;
+  display: flex;
+}
+.header .img__top__grid .img__top__wapper {
+  width: 100%;
+  flex-grow: 1;
+}
+.header .img__top__grid .img__top__wapper .img__top {
+  width: 100%;
+  height: auto;
+}
+
+.content__info {
+  margin-bottom: 80px;
+  text-align: center;
+}
+.content__info__title {
+  font-size: 110px;
+  font-weight: bold;
+  font-family: NeoSansIntel;
+}
+.content__info__title .phar {
+  color: #f3a240;
+}
+.content__info__title .marketing {
+  color: #77b243;
+}
+.content__info__giaiphap {
+  font-size: 41px;
+  font-family: NeoSansIntel;
+}
+.content__info__find {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: NeoSansIntel;
+  color: #f3a240;
+  position: relative;
+}
+.content__info__find::after {
+  content: url(../img/rect.png);
+  position: absolute;
+  top: 0px;
+  left: 70px;
+  top: 23px;
+}
+
+.usp__title {
+  font-size: 70px;
+  font-weight: bold;
+  font-family: SVNGilroy;
+  text-align: center;
+  color: #77b243;
+}
+.usp__title__sub {
+  font-size: 48px;
+  font-weight: lighter;
+  font-family: SVNGilroy;
+  text-align: center;
+  color: #f79621;
+}
+.usp__group {
+  display: flex;
+  justify-content: space-around;
 }
 
 .footer {
@@ -101,6 +226,122 @@
   content: url("../img/phone.png");
   position: absolute;
   left: 0px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .header {
+    min-height: 570px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header {
+    min-height: 410px;
+  }
+
+  .content__info__title, .usp__title {
+    font-size: 88px;
+  }
+
+  .content__info__giaiphap, .usp__title__sub {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    min-height: 310px;
+  }
+  .header .navbar-brand {
+    width: 130px;
+  }
+  .header .navbar-brand img {
+    width: 100%;
+  }
+  .header__main {
+    margin-left: 10px;
+  }
+  .header .nav-item {
+    font-size: 13px;
+  }
+  .header .nav-link {
+    padding-right: 0px;
+  }
+  .header__search {
+    padding: 12px 0px;
+  }
+
+  .content__info__title, .usp__title {
+    font-size: 75px;
+  }
+
+  .content__info__giaiphap, .usp__title__sub {
+    font-size: 30px;
+  }
+
+  .footer__contact::after {
+    display: none;
+  }
+
+  .footer__category::after {
+    display: none;
+  }
+
+  .footer__face, .footer__category__title {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .header {
+    min-height: 175px;
+  }
+  .header .navbar-brand {
+    width: 100px;
+    padding-top: 8px;
+  }
+  .header .navbar-brand img {
+    width: 100%;
+  }
+  .header .collapse .form-inline {
+    display: flex;
+  }
+  .header .navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .header__search {
+    display: none;
+  }
+  .header__main {
+    background: linear-gradient(to right, #5265c1, #77bfd8);
+    margin-left: 0;
+    flex-grow: 0;
+  }
+
+  .content__info__title, .usp__title {
+    font-size: 45px;
+  }
+
+  .content__info__giaiphap, .usp__title__sub {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .content__info__title, .usp__title {
+    font-size: 37px;
+  }
+
+  .content__info__giaiphap, .usp__title__sub {
+    font-size: 21px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header {
+    min-height: 130px;
+  }
+
+  .footer__face img {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
