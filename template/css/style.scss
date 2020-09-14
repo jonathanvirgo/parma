@@ -91,7 +91,7 @@
 //End header
 //Content Info
 .content__info{
-    margin-bottom: 80px;
+    margin-bottom: 90px;
     text-align: center;
     &__title{
         font-size: 110px;
@@ -139,13 +139,150 @@
         font-family: SVNGilroy;
         text-align: center;
         color: #f79621;
+        margin-bottom: 70px;
     }
-    &__group{
-        display: flex;
-        justify-content: space-around;;
+    &__content__group{
+        .row:first-child{
+            margin-bottom: 70px;
+        }
     }
+    &__content__item{
+        &__img{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        &__text{
+            font-family: NeoSansIntel;
+            font-size: 16px;
+            text-align: center;
+            padding: 0px 32px;
+            &__title{
+                font-size: 18px;
+                color: #77b243;
+                font-weight: bold;
+            }
+            &__content{
+                padding-top: 6px;
+                padding-bottom: 5px;
+                font-family: inherit;
+            }
+        }
+        &__link{
+            color: #77b243;
+            font-weight: bold;
+            &::after{
+                content: url(../img/rect_usp.png);
+                position: relative;
+                left: 15px;
+                top: 2px;
+            }
+        }
+    }
+
 }
 //End Usp
+//Hỏi đáp
+.you__need{
+    font-family: NeoSansIntel;
+    font-weight: bold;
+    margin-top: 120px;
+    background-image: url("../img/you-need1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 680px;
+    margin-bottom: 90px;
+    position: relative;
+    &__title{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 40px;
+        &__text{
+            padding-top: 100px;
+            position: relative;
+            left: 19px;
+        }
+        &__img{
+            padding-top: 68px;
+            img{
+                width: 90%;
+            }
+        }
+    }
+    &__content{
+       &__row1{
+            margin-top: 30px;
+        }
+        &__row2{
+            margin-top: 40px;
+        }
+        &__item{
+            background-image: url("../img/you-need-rect.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            min-height: 110px;
+            margin: 0px 15px;
+            text-align: center;
+            font-size: 20px;
+            color: #5d5d5d;
+            padding: 20px 0px;
+            p{
+                margin-bottom: 0px;
+            }
+        }
+    }
+    &__lothuoc, &__vienthuoc, &__xanh{
+        position: absolute;
+        img{
+            width: 90%;
+        }
+    }
+    &__lothuoc{
+        top: -142px;
+        left: -83px;
+    }
+    &__vienthuoc{
+        top: -83px;
+        right: -20px;
+    }
+    &__xanh{
+        bottom: 15px;
+        right: -20px;
+    }
+}
+//End hỏi đáp
+//Solution
+.solution{
+    font-family: NeoSansIntel;
+    &__head{
+        text-align: center;
+        &__title{
+            font-size: 70px;
+            font-weight: bold;
+            color: #77b243;
+        }
+        &__text{
+            font-size: 48px;
+            color: #f79621;
+        }
+        &__desc{
+            font-size: 17px;
+            color: #999999;
+            padding-top: 20px;
+        }
+    }
+    &__content{
+        margin-top: 90px;
+        .card_2{
+            margin-top: 60px;
+        }
+    }
+    .swiper-pagination{
+        margin-top: 40px;
+    }
+}
+//End solution
 // Footer
 .footer{
     min-height: 320px;
@@ -238,6 +375,11 @@
     .content__info__giaiphap, .usp__title__sub{
         font-size: 35px;
     }
+    .you__need{
+        &__content__item{
+            padding: 13px 0px;
+        }
+    }
 }
 @media only screen and (max-width: 768px){
     .header{
@@ -266,6 +408,14 @@
     }
     .content__info__giaiphap, .usp__title__sub{
         font-size: 30px;
+    }
+    .you__need{
+        &__content__item{
+            padding: 20px 0px;
+        }
+        &__vienthuoc, &__lothuoc{
+            display: none;
+        }
     }
     .footer__contact::after{
         display: none;
@@ -307,6 +457,29 @@
             flex-grow: 0;
         }
     }
+    .you__need{
+        &__title{
+            &__text{
+                font-size: 25px;
+                padding-top: 68px;
+            }
+            &__img{
+                padding-top: 44px;
+                img{
+                    width: 63%;
+                }
+            }
+        }
+        &__content__item{
+            margin: 0px 60px;
+        }
+        &__content__row1{
+            margin-top: 6px;
+        }
+        &__content__row2{
+            margin-top: 0px;
+        }
+    }
     .content__info__title, .usp__title{
         font-size: 45px;
     }
@@ -321,12 +494,62 @@
     .content__info__giaiphap, .usp__title__sub{
         font-size: 21px;
     }
+    .you__need{
+        &__title{
+            &__text{
+                font-size: 22px;
+                padding-top: 22px;
+                left: 0px;
+            }
+            &__img{
+                display: none;
+            }
+        }
+        &__content__item{
+            margin: 0px 36px;
+        }
+        &__content__row1{
+            margin-top: 56px;
+        }
+    }
 }
 @media only screen and (max-width: 320px){
     .header{
         min-height: 130px;
     }
+    
     .footer__face img{
         width: 100%;
     }
+}
+.thumbnail-img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transition: all .2s ease-in-out;
+}
+.card-body{
+    font-family: NeoSansIntel;
+    padding: 0;
+    margin-top: 22px;
+    .card-title{
+        a{
+            color: #f6a441;
+        }
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .card-text{
+        font-size: 14px;
+    }
+}
+.thumbnail-effect-zoomin:focus .thumbnail-img, .thumbnail-effect-zoomin:hover .thumbnail-img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.thumbnail-effect-zoomin .thumbnail-inner {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    overflow: hidden;
 }
