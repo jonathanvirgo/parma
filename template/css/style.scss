@@ -3,16 +3,38 @@
     font-family: NeoSansIntel;
     src: url(../fonts/UTM-Neo-Sans-Intel.ttf);
   }
-  @font-face {
-    font-family: SVNGilroy;
-    src: url(../fonts/SVN-Gilroy.otf);
-  }
+@font-face {
+font-family: SVNGilroy;
+src: url(../fonts/SVN-Gilroy.otf);
+}
+@mixin titleMain($size) {
+    font-size: $size;
+    font-weight: bold;
+    color: #77b243;
+}
+body{
+font-family: NeoSansIntel;
+}
+.page-main-home{
+    background-image: url(../img/bg-an1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0% 40%;
+}
+.page-main-contact{
+    background-image: url(../img/lien-he-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0% 70%;
+}
+.page-main-solution{
+    margin-top: 50px;
+}
 //Header
 .header{
-    background-image: url(../img/top_element.png);
+    background-image: url(../img/ellipse_4.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 755px;
+    background-size: 100% 100%;
     font-size: 13px;
     &__search{
         display: flex;
@@ -74,20 +96,32 @@
             display: none;
         }
     }
-    .img__top__grid{
-        padding-top: 95px;
+    .img__top__wapper{
         display: flex;
-        .img__top__wapper{
+        justify-content: center;
+        align-items: flex-end;
+
+        .img__top{
             width: 100%;
-            flex-grow: 1;
-            .img__top{
-                width: 100%;
-                height:auto;
-            }
+            height:auto;
+            padding-top: 8vh;
+        }
+        .img__top__contact{
+            width: 50%;
+            height:auto;
+            padding-bottom: 6vh;
         }
     }
+    .title__contact{
+        text-align: center;
+        font-family: NeoSansIntel;
+        font-size: 81px;
+        font-weight: bold;
+        color: white;
+        padding-top: 45px;
+        padding-bottom: 20px;
+    }
 }
-
 //End header
 //Content Info
 .content__info{
@@ -255,13 +289,9 @@
 //Solution
 .solution{
     font-family: NeoSansIntel;
+    position: relative;
     &__head{
         text-align: center;
-        &__title{
-            font-size: 70px;
-            font-weight: bold;
-            color: #77b243;
-        }
         &__text{
             font-size: 48px;
             color: #f79621;
@@ -278,11 +308,112 @@
             margin-top: 60px;
         }
     }
-    .swiper-pagination{
-        margin-top: 40px;
+    & > .container-fluid img{
+        position: absolute;
+    }
+    &__sm1{
+        bottom: -73px;
+        right: 0px;
+    }
+    &__sm2{
+        bottom: -73px;
+        left: 0px;
+    }
+    &__sm3{
+        top: 600px;
+        left: 90px;
     }
 }
 //End solution
+//Kiến thức
+.knowledge,.report,.case-study{
+    // margin-top: 140px;
+    &__title{
+        text-align: center;
+        margin-bottom: 70px;
+    }
+}
+.case-study{
+    padding-bottom: 150px;
+    position: relative;
+    & > .container-fluid img{
+        position: absolute;
+        z-index: -1;
+    }
+    &__sm1{
+        bottom: -16px;
+        left: -15px;
+    }
+    &__sm2{
+        bottom: -35px;
+        right: -15px;
+    }
+}
+.report{
+    position: relative;
+    & > .container-fluid img{
+        position: absolute;
+    }
+    &__sm1{
+        top: -295px;
+        right: -12px;
+    }
+    &__sm2{
+        top: -406px;
+        left: -12px;
+    }
+}
+//End kiến thức
+.contact{
+    text-align: center;
+    padding-bottom: 100px;
+    &__title{
+        font-size: 48px;
+        font-weight: bold;
+        color: #f6a441;
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+    input{
+        height: 60px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        border: none;
+    }
+    textarea{
+        height: 188px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        border: none;
+    }
+    button{
+        font-weight: bold;
+        background-color: #f6a441;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+}
+.doi_tac{
+    padding-bottom: 100px;
+    &__title{
+        text-align: center;
+    }
+    .brand-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #89bc5c;
+        width: 300px;
+        height: 130px;
+        overflow: hidden;
+        border-bottom: none;
+        margin-top: 40px;
+        border-radius: 5px;
+    }
+
+}
 // Footer
 .footer{
     min-height: 320px;
@@ -343,6 +474,9 @@
 }
 .footer__face div{
     margin-top: 18px;
+    img{
+        width: 90%;
+    }
 }
 .footer__contact__detail__add::before{
     content: url('../img/house.png');
@@ -360,15 +494,95 @@
     left: 0px;
 }
 // End footer
+.thumbnail-img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transition: all .2s ease-in-out;
+}
+.card-body{
+    font-family: NeoSansIntel;
+    padding: 0;
+    margin-top: 22px;
+    .card-title{
+        a{
+            color: #f6a441;
+        }
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .card-text{
+        font-size: 14px;
+    }
+}
+.thumbnail-effect-zoomin:focus .thumbnail-img, .thumbnail-effect-zoomin:hover .thumbnail-img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.thumbnail-effect-zoomin .thumbnail-inner {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    overflow: hidden;
+}
+.card{
+    border: none;
+}
+.swiper-pagination{
+    margin-top: 35px;
+    margin-bottom: 40px;
+    position: relative;
+    bottom: 0px !important;
+    .swiper-pagination-bullet{
+        width: 17px;
+        height: 17px;
+        background: none;
+        opacity: 1;
+        border: 1px solid #71b435;
+    }
+    .swiper-pagination-bullet-active{
+        background: #71b435;
+    }
+}
+.btn__xemthem{
+    display: flex;
+    justify-content: center;
+    button{
+        width: 190px;
+        height: 48px;
+        border-radius: 10px;
+        color: white;
+        background-color: #71b435;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+}
+.title_main{
+    @include titleMain(70px)
+}
+.img__line{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    img{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 1900px){
+    .img__sm{
+        display: none;
+    }
+}
 @media only screen and (max-width: 1440px){
-    .header{
-        min-height: 570px;
+    .page-main{
+        background: none;
     }
 }
 @media only screen and (max-width: 1024px){
-    .header{
-        min-height: 410px;
-    }
     .content__info__title, .usp__title{
         font-size: 88px;
     }
@@ -383,7 +597,6 @@
 }
 @media only screen and (max-width: 768px){
     .header{
-        min-height: 310px;
         .navbar-brand{
             width: 130px;
             img{
@@ -429,7 +642,6 @@
 }
 @media only screen and (max-width: 425px){
     .header{
-        min-height: 175px;
         .navbar-brand{
             width: 100px;
             padding-top: 8px;
@@ -455,6 +667,11 @@
             background: linear-gradient(to right,#5265c1,#77bfd8);
             margin-left: 0;
             flex-grow: 0;
+        }
+        .img__top__wapper{
+            .img__top{
+                padding-top: 4vh;
+            }
         }
     }
     .you__need{
@@ -486,6 +703,12 @@
     .content__info__giaiphap, .usp__title__sub{
         font-size: 25px;
     }
+    .solution__head__text{
+        font-size: 35px;
+    }
+    .title_main{
+        @include titleMain(40px)
+    }
 }
 @media only screen and (max-width: 375px){
     .content__info__title, .usp__title{
@@ -514,42 +737,7 @@
     }
 }
 @media only screen and (max-width: 320px){
-    .header{
-        min-height: 130px;
-    }
-    
     .footer__face img{
         width: 100%;
     }
-}
-.thumbnail-img{
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    transition: all .2s ease-in-out;
-}
-.card-body{
-    font-family: NeoSansIntel;
-    padding: 0;
-    margin-top: 22px;
-    .card-title{
-        a{
-            color: #f6a441;
-        }
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    .card-text{
-        font-size: 14px;
-    }
-}
-.thumbnail-effect-zoomin:focus .thumbnail-img, .thumbnail-effect-zoomin:hover .thumbnail-img {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-.thumbnail-effect-zoomin .thumbnail-inner {
-    -webkit-transform: translate(0);
-    transform: translate(0);
-    overflow: hidden;
 }
