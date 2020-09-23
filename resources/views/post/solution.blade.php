@@ -9,10 +9,10 @@
 @section('keywords')
 @stop
 
-@section('canonical'){{ route('solution') }}/
+@section('canonical')
 @stop
 
-@section('alternate'){{ route('solution') }}/
+@section('alternate')
 @stop
 
 @section('propName')
@@ -27,7 +27,7 @@
 @section('ogDesc')
 @stop
 
-@section('ogUrl'){{ route('solution') }}/
+@section('ogUrl')
 @stop
 
 @section('pageCss')
@@ -50,274 +50,62 @@
         <section class="section solution">
             <div class="container">
                 <div class="solution__head">
-                    <div class="solution__head__title title_main">GIẢI PHÁP</div>
-                    <div class="solution__head__text">MARKETING Y - DƯỢC</div>
-                    <div class="solution__head__desc">Lorem Ipsum is simply dummy text of the printing and
-                        typesetting
-                        industry.<br>
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                    <div class="solution__head__title title_main">{{$news[0]['name_main']}}</div>
+                    <div class="solution__head__text">{{$news[0]['name_sub']}}</div>
+                    <div class="row solution__head__desc justify-content-center">
+                        <div class="col-md-7">{{Str::limit($news[0]['description'], 160)}}</div>
+                    </div>
                 </div>
                 <div class="solution__content">
                     <div class="swiper-container swiper-container-solution">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <article class="card">
-                                    <a class="thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
+                            @for($i = 0; $i < count($news[0]['post']) - 2; $i = $i + 3)
+                                <div class="swiper-slide">
+                                    <article class="card">
+                                        <a class="thumbnail-effect-zoomin" href="{{$news[0]['post'][$i]['slug']}}">
+                                            <div class="thumbnail-inner">
+                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i]['img']))}}" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="{{$news[0]['post'][$i]['slug']}}">{{Str::limit($news[0]['post'][$i]['title'],68)}}</a>
+                                            </h4>
+                                            <p class="card-text">{{Str::limit($news[0]['post'][$i]['excerpt'], 140)}}</p>
                                         </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
+                                    </article>
+                                    <article class="card card_2">
+                                        <a class="thumbnail thumbnail-effect-zoomin" href="{{$news[0]['post'][$i+1]['slug']}}">
+                                            <div class="thumbnail-inner">
+                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i+1]['img']))}}" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="{{$news[0]['post'][$i+1]['slug']}}">{{Str::limit($news[0]['post'][$i+1]['title'], 68)}}</a>
+                                            </h4>
+                                            <p class="card-text">{{Str::limit($news[0]['post'][$i+1]['excerpt'], 140)}}</p>
                                         </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
+                                    </article>
+                                    <article class="card card_2">
+                                        <a class="thumbnail thumbnail-effect-zoomin" href="{{$news[0]['post'][$i+2]['slug']}}">
+                                            <div class="thumbnail-inner">
+                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i+2]['img']))}}" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="{{$news[0]['post'][$i+1]['slug']}}">{{Str::limit($news[0]['post'][$i+2]['title'], 68)}}</a>
+                                            </h4>
+                                            <p class="card-text">{{Str::limit($news[0]['post'][$i+1]['excerpt'], 140)}}</p>
                                         </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="card">
-                                    <a class="thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-2.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-2.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-2.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="card">
-                                    <a class="thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-3.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-3.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-3.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="card">
-                                    <a class="thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="card">
-                                    <a class="thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                                <article class="card card_2">
-                                    <a class="thumbnail thumbnail-effect-zoomin" href="#">
-                                        <div class="thumbnail-inner">
-                                            <img class="thumbnail-img" src="{{URL::asset('img/solution-1.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="#">COVID-19: Phân tích người dùng trước, trong và sau giãn cách
-                                                xã hội</a>
-                                        </h4>
-                                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                            text</p>
-                                    </div>
-                                </article>
-                            </div>
+                                    </article>
+                                </div>
+                            @endfor
                         </div>
                         <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-pagination" style="{margin-top: 50px; margin-bottom: 0px}"></div>
                     </div>
-
-                </div>
-                <div class="btn__xemthem">
-                    <button type="button" class="btn">Xem thêm</button>
                 </div>
                 <div class="img__line">
                     <img src="{{URL::asset('img/line-1.png')}}" alt="">
@@ -330,60 +118,18 @@
                 <div class="doi_tac__content">
                     <div class="swiper-container swiper-container-doitac">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/traphaco.png')}}" alt="">
-                                        </div>
-                                    </a>
+                            @forelse($doi_tac as $dt)
+                                <div class="swiper-slide">
+                                    <div class="brand-wapper">
+                                        <a href="">
+                                            <div class="brand-item">
+                                                <img src="{{Storage::url($dt['image'])}}" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/dk-pharma.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/dhg-pharma.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/green-pharma.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/hai.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-wapper">
-                                    <a href="">
-                                        <div class="brand-item">
-                                            <img src="{{URL::asset('img/nafaco.png')}}" alt="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>

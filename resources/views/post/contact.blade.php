@@ -9,10 +9,10 @@
 @section('keywords')
 @stop
 
-@section('canonical'){{ route('solution') }}/
+@section('canonical')
 @stop
 
-@section('alternate'){{ route('solution') }}/
+@section('alternate')
 @stop
 
 @section('propName')
@@ -27,7 +27,7 @@
 @section('ogDesc')
 @stop
 
-@section('ogUrl'){{ route('solution') }}/
+@section('ogUrl')
 @stop
 
 @section('pageCss')

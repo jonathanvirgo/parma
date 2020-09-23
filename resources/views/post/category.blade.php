@@ -9,10 +9,10 @@
 @section('keywords')
 @stop
 
-@section('canonical'){{ route('category') }}/
+@section('canonical')
 @stop
 
-@section('alternate'){{ route('category') }}/
+@section('alternate')
 @stop
 
 @section('propName')
@@ -27,7 +27,7 @@
 @section('ogDesc')
 @stop
 
-@section('ogUrl'){{ route('category') }}/
+@section('ogUrl')
 @stop
 
 @section('pageCss')
@@ -35,13 +35,13 @@
 
 @section('head-title')
     <div class="title__contact">
-        <p>BÁO CÁO INSIGHTS</p>
+        <p>{{$header[0]['name']}}</p>
     </div>
 @stop
 
 @section('head-img')
     <div class="img__top__wapper">
-        <img class="img__top__report" src="{{URL::asset('img/report-top.png')}}" alt="Top Element">
+        <img class="img__top__report" src="{{Storage::url($header[0]['url_img'])}}" alt="Top Element">
     </div>
 @stop
 

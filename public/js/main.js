@@ -24,7 +24,7 @@ var swiper_solution = new Swiper('.swiper-container-solution', {
         }
     }
 });
-var swiper_knowledge = new Swiper('.swiper-container-knowledge', {
+var swiper_section = new Swiper('.swiper-container-section', {
     slidesPerView: 3,
     spaceBetween: 100,
     loop: true,

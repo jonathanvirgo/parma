@@ -12,10 +12,11 @@ body {
 }
 
 .page-main-home {
-    background-image: url(../img/bg-an1.png);
+    background-image: url(../img/bg-home.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 0% 40%;
+    padding-bottom: 100px;
 }
 
 .page-main-contact {
@@ -330,61 +331,11 @@ body {
 .solution__content .card_2 {
     margin-top: 60px;
 }
-.solution > .container-fluid img {
-    position: absolute;
-}
-.solution__sm1 {
-    bottom: -73px;
-    right: 0px;
-}
-.solution__sm2 {
-    bottom: -73px;
-    left: 0px;
-}
-.solution__sm3 {
-    top: 600px;
-    left: 90px;
-}
 
-.knowledge__title,
-.report__title,
-.case-study__title {
+.section__title{
     text-align: center;
     margin-bottom: 70px;
 }
-
-.case-study {
-    padding-bottom: 150px;
-    position: relative;
-}
-.case-study > .container-fluid img {
-    position: absolute;
-    z-index: -1;
-}
-.case-study__sm1 {
-    bottom: -16px;
-    left: -15px;
-}
-.case-study__sm2 {
-    bottom: -35px;
-    right: -15px;
-}
-
-.report {
-    position: relative;
-}
-.report > .container-fluid img {
-    position: absolute;
-}
-.report__sm1 {
-    top: -295px;
-    right: -12px;
-}
-.report__sm2 {
-    top: -406px;
-    left: -12px;
-}
-
 .contact {
     text-align: center;
     padding-bottom: 100px;
@@ -424,7 +375,7 @@ body {
     text-align: center;
 }
 .doi_tac__content {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 .doi_tac .brand-item {
     display: flex;
@@ -537,7 +488,7 @@ body {
 .thumbnail-img {
     max-width: 100%;
     width: 100%;
-    height: auto;
+    /*height: 160px;*/
     transition: all 0.2s ease-in-out;
 }
 
@@ -572,6 +523,7 @@ body {
 
 .card {
     border: none;
+    height: 305px;
 }
 
 .swiper-pagination {
@@ -580,6 +532,17 @@ body {
     position: relative;
     bottom: 0px !important;
 }
+
+.page-main-solution .solution__content .swiper-pagination{
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.page-main-solution .doi_tac__content .swiper-pagination{
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
 .swiper-pagination .swiper-pagination-bullet {
     width: 17px;
     height: 17px;
