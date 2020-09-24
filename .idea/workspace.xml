@@ -26,15 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a5af362-faac-449e-9b6f-b04b202909b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/post/category-detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/category.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/post/solution.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/solution.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +224,7 @@
       <workItem from="1600651969751" duration="24061000" />
       <workItem from="1600824064998" duration="13112000" />
       <workItem from="1600838007908" duration="11458000" />
-      <workItem from="1600910974304" duration="27545000" />
+      <workItem from="1600910974304" duration="28761000" />
     </task>
     <servers />
   </component>
@@ -306,7 +300,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/post/category.blade.php</url>
-          <line>62</line>
+          <line>66</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

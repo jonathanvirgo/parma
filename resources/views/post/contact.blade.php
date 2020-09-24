@@ -35,13 +35,17 @@
 
 @section('head-title')
     <div class="title__contact">
+        @isset($header[0])
         <p>{{$header[0]['name']}}</p>
+        @endisset
     </div>
 @stop
 
 @section('head-img')
     <div class="img__top__wapper">
+        @isset($header[0])
         <img class="img__top__report" src="{{Storage::url($header[0]['url_img'])}}" alt="Top Element">
+        @endisset
     </div>
 @stop
 

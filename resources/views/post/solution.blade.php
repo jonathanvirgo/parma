@@ -35,13 +35,17 @@
 
 @section('head-title')
     <div class="title__contact">
+        @isset($header[0])
         <p>{{$header[0]['name']}}</p>
+        @endisset
     </div>
 @stop
 
 @section('head-img')
     <div class="img__top__wapper">
+        @isset($header[0])
         <img class="img__top__report" src="{{Storage::url($header[0]['url_img'])}}" alt="Top Element">
+        @endisset
     </div>
 @stop
 
@@ -49,16 +53,19 @@
     <div class="page-main page-main-solution bg-categoty container-fluid">
         <section class="section solution">
             <div class="container">
+                @isset($news[0])
                 <div class="solution__head">
                     <div class="solution__head__title title_main">{{$news[0]['name_main']}}</div>
                     <div class="solution__head__text">{{$news[0]['name_sub']}}</div>
                     <div class="row solution__head__desc justify-content-center">
                         <div class="col-md-7">{{Str::limit($news[0]['description'], 160)}}</div>
                     </div>
+
                 </div>
                 <div class="solution__content">
                     <div class="swiper-container swiper-container-solution">
                         <div class="swiper-wrapper">
+                            @isset($news[0]['post'])
                             @foreach($news[0]['post'] as $slide)
                                 <div class="swiper-slide">
                                     @foreach($slide as $article)
@@ -78,11 +85,13 @@
                                     @endforeach
                                 </div>
                             @endforeach
+                            @endisset
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination" style="{margin-top: 50px; margin-bottom: 0px}"></div>
                     </div>
                 </div>
+                @endisset
                 <div class="img__line">
                     <img src="{{URL::asset('img/line-1.png')}}" alt="">
                 </div>
