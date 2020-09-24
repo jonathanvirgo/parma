@@ -35,13 +35,13 @@
 
 @section('head-title')
     <div class="title__contact">
-        <p>LIÊN HỆ</p>
+        <p>{{$header[0]['name']}}</p>
     </div>
 @stop
 
 @section('head-img')
     <div class="img__top__wapper">
-        <img class="img__top__contact" src="{{URL::asset('img/lien-he-top.png')}}" alt="Top Element">
+        <img class="img__top__report" src="{{Storage::url($header[0]['url_img'])}}" alt="Top Element">
     </div>
 @stop
 

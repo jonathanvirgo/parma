@@ -35,13 +35,13 @@
 
 @section('head-title')
     <div class="title__contact">
-        <p>GIẢI PHÁP MARKETING</p>
+        <p>{{$header[0]['name']}}</p>
     </div>
 @stop
 
 @section('head-img')
     <div class="img__top__wapper">
-        <img class="img__top__category" src="{{URL::asset('img/solution-top.png')}}" alt="Top Element">
+        <img class="img__top__report" src="{{Storage::url($header[0]['url_img'])}}" alt="Top Element">
     </div>
 @stop
 
@@ -59,49 +59,25 @@
                 <div class="solution__content">
                     <div class="swiper-container swiper-container-solution">
                         <div class="swiper-wrapper">
-                            @for($i = 0; $i < count($news[0]['post']) - 2; $i = $i + 3)
+                            @foreach($news[0]['post'] as $slide)
                                 <div class="swiper-slide">
-                                    <article class="card">
-                                        <a class="thumbnail-effect-zoomin" href="{{$news[0]['post'][$i]['slug']}}">
+                                    @foreach($slide as $article)
+                                    <article class="card" style="margin-top: 40px">
+                                        <a class="thumbnail-effect-zoomin" href="{{$article['slug']}}">
                                             <div class="thumbnail-inner">
-                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i]['img']))}}" alt="">
+                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.','-cropped.',$article['img']))}}" alt="">
                                             </div>
                                         </a>
                                         <div class="card-body">
                                             <h4 class="card-title">
-                                                <a href="{{$news[0]['post'][$i]['slug']}}">{{Str::limit($news[0]['post'][$i]['title'],68)}}</a>
+                                                <a href="{{$article['slug']}}">{{Str::limit($article['title'],68)}}</a>
                                             </h4>
-                                            <p class="card-text">{{Str::limit($news[0]['post'][$i]['excerpt'], 140)}}</p>
+                                            <p class="card-text">{{Str::limit($article['excerpt'], 140)}}</p>
                                         </div>
                                     </article>
-                                    <article class="card card_2">
-                                        <a class="thumbnail thumbnail-effect-zoomin" href="{{$news[0]['post'][$i+1]['slug']}}">
-                                            <div class="thumbnail-inner">
-                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i+1]['img']))}}" alt="">
-                                            </div>
-                                        </a>
-                                        <div class="card-body">
-                                            <h4 class="card-title">
-                                                <a href="{{$news[0]['post'][$i+1]['slug']}}">{{Str::limit($news[0]['post'][$i+1]['title'], 68)}}</a>
-                                            </h4>
-                                            <p class="card-text">{{Str::limit($news[0]['post'][$i+1]['excerpt'], 140)}}</p>
-                                        </div>
-                                    </article>
-                                    <article class="card card_2">
-                                        <a class="thumbnail thumbnail-effect-zoomin" href="{{$news[0]['post'][$i+2]['slug']}}">
-                                            <div class="thumbnail-inner">
-                                                <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$news[0]['post'][$i+2]['img']))}}" alt="">
-                                            </div>
-                                        </a>
-                                        <div class="card-body">
-                                            <h4 class="card-title">
-                                                <a href="{{$news[0]['post'][$i+1]['slug']}}">{{Str::limit($news[0]['post'][$i+2]['title'], 68)}}</a>
-                                            </h4>
-                                            <p class="card-text">{{Str::limit($news[0]['post'][$i+1]['excerpt'], 140)}}</p>
-                                        </div>
-                                    </article>
+                                    @endforeach
                                 </div>
-                            @endfor
+                            @endforeach
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination" style="{margin-top: 50px; margin-bottom: 0px}"></div>

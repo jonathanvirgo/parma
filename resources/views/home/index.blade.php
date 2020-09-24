@@ -38,7 +38,9 @@
 
 @section('head-img')
     <div class="img__top__wapper">
+        @isset($home_img[0])
         <img class="img__top" src="{{Storage::url($home_img[0]['url_img']) }}" alt="Top Element">
+        @endisset
     </div>
 @stop
 
@@ -55,6 +57,7 @@
                 <div class="usp__content__group">
                     <div class="row">
                         @for($i = 4; $i >= 2; $i--)
+                            @isset($tin_trang_chu[$i])
                             <div class="col-md-4 usp__content__item">
                                 <div class="usp__content__item__img"><img src="{{Storage::url($tin_trang_chu[$i]['icon'])}}" alt=""></div>
                                 <div class="usp__content__item__text">
@@ -65,10 +68,12 @@
                                     <a class="usp__content__item__link" href="">Tìm hiểu thêm</a>
                                 </div>
                             </div>
+                            @endisset
                         @endfor
                     </div>
                     <div class="row justify-content-center">
                         @for($i = 1; $i >= 0; $i--)
+                            @isset($tin_trang_chu[$i])
                             <div class="col-md-4 usp__content__item">
                                 <div class="usp__content__item__img"><img src="{{Storage::url($tin_trang_chu[$i]['icon'])}}" alt=""></div>
                                 <div class="usp__content__item__text">
@@ -79,6 +84,7 @@
                                     <a class="usp__content__item__link" href="">Tìm hiểu thêm</a>
                                 </div>
                             </div>
+                            @endisset
                         @endfor
                     </div>
                 </div>
@@ -93,7 +99,9 @@
                             <div class="col-lg-8 col-md-12 col-12">
                                 <div class="row justify-content-center">
                                     @foreach ($you_needs as $menu)
-                                        <div class="col-5 you__need__content__item">{{$menu['name']}}</div>
+                                        <div class="col-5 you__need__content__item">
+                                            <a href="#{{$menu['slug']}}">{{$menu['name']}}</a>
+                                        </div>
                                     @endforeach
                             </div>
                         </div>
@@ -109,7 +117,8 @@
                     <img src="{{URL::asset('img/xanh.png')}}" alt="">
                 </div>
             </section>
-            <section class="section solution" id="solution">
+            @isset($new_home[0])
+            <section class="section solution" id="{{$new_home[0]['slug']}}">
                 <div class="container">
                     <div class="solution__head">
                         <div class="solution__head__title title_main">{{$new_home[0]['name_main']}}</div>
@@ -121,36 +130,25 @@
                     <div class="solution__content">
                         <div class="swiper-container swiper-container-solution">
                             <div class="swiper-wrapper">
-                                @for($i = 0; $i < count($new_home[0]['post']) - 1; $i = $i + 2)
+                                @foreach($new_home[0]['post'] as $slide)
                                     <div class="swiper-slide">
-                                        <article class="card">
-                                            <a class="thumbnail-effect-zoomin" href="{{$new_home[0]['post'][$i]['slug']}}">
-                                                <div class="thumbnail-inner">
-                                                    <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg', $new_home[0]['post'][$i]['img']))}}" alt="">
+                                        @foreach($slide as $article)
+                                            <article class="card" style="margin-top: 50px">
+                                                <a class="thumbnail-effect-zoomin" href="{{$article['slug']}}">
+                                                    <div class="thumbnail-inner">
+                                                        <img class="thumbnail-img" src="{{Storage::url(str_replace('.','-cropped.', $article['img']))}}" alt="">
+                                                    </div>
+                                                </a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="{{$article['slug']}}">{{Str::limit($article['title'],68)}}</a>
+                                                    </h4>
+                                                    <p class="card-text">{{Str::limit($article['excerpt'], 140)}}</p>
                                                 </div>
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title">
-                                                    <a href="{{$new_home[0]['post'][$i]['slug']}}">{{Str::limit($new_home[0]['post'][$i]['title'],68)}}</a>
-                                                </h4>
-                                                <p class="card-text">{{Str::limit($new_home[0]['post'][$i]['excerpt'], 140)}}</p>
-                                            </div>
-                                        </article>
-                                        <article class="card card_2">
-                                            <a class="thumbnail thumbnail-effect-zoomin" href="{{$new_home[0]['post'][$i+1]['slug']}}">
-                                                <div class="thumbnail-inner">
-                                                    <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg', $new_home[0]['post'][$i + 1]['img']))}}" alt="">
-                                                </div>
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title">
-                                                    <a href="{{$new_home[0]['post'][$i+1]['slug']}}">{{Str::limit($new_home[0]['post'][$i+1]['title'], 68)}}</a>
-                                                </h4>
-                                                <p class="card-text">{{Str::limit($new_home[0]['post'][$i+1]['excerpt'], 140)}}</p>
-                                            </div>
-                                        </article>
+                                            </article>
+                                        @endforeach
                                     </div>
-                                @endfor
+                                @endforeach
                             </div>
                             <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
@@ -158,13 +156,14 @@
 
                     </div>
                     <div class="btn__xemthem">
-                        <button type="button" class="btn">Xem thêm</button>
+                        <a type="button" class="btn" href="{{$new_home[0]['slug']}}">Xem thêm</a>
                     </div>
 
                 </div>
             </section>
+            @endisset
             @for($i = 1; $i< count($new_home); $i++)
-                            <section class="section">
+                            <section class="section" id="{{$new_home[$i]['slug']}}">
                                 <div class="container">
                                     <div class="img__line">
                                         <img src="{{URL::asset('img/line-1.png')}}" alt="">
@@ -178,7 +177,7 @@
                                                         <article class="card">
                                                             <a class="thumbnail-effect-zoomin" href="{{$new['slug']}}">
                                                                 <div class="thumbnail-inner">
-                                                                    <img class="thumbnail-img" src="{{Storage::url(str_replace('.jpg','-small.jpg',$new['img']))}}" alt="">
+                                                                    <img class="thumbnail-img" src="{{Storage::url(str_replace('.','-cropped.',$new['img']))}}" alt="">
                                                                 </div>
                                                             </a>
                                                             <div class="card-body">
@@ -196,7 +195,7 @@
                                         </div>
                                     </div>
                                     <div class="btn__xemthem">
-                                        <button type="button" class="btn">Xem thêm</button>
+                                        <a type="button" class="btn" href="{{$new_home[$i]['slug']}}">Xem thêm</a>
                                     </div>
                                 </div>
                             </section>

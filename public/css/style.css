@@ -19,11 +19,12 @@ body {
     padding-bottom: 100px;
 }
 
-.page-main-contact {
+.page-main-category {
     background-image: url(../img/lien-he-bg.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 0% 70%;
+    padding-bottom: 100px;
 }
 
 .page-main-solution {
@@ -224,6 +225,10 @@ body {
     justify-content: center;
     margin-bottom: 15px;
 }
+.usp__content__item__img img{
+    max-width: 100%;
+    max-height: 130px;
+}
 .usp__content__item__text {
     font-family: NeoSansIntel;
     font-size: 16px;
@@ -287,8 +292,10 @@ body {
     margin: 30px 15px 0px 15px;
     text-align: center;
     font-size: 27px;
-    color: #5d5d5d;
     padding: 30px 0px 20px 0px;
+}
+.you__need__content__item a{
+    color: #5d5d5d;
 }
 .you__need__lothuoc, .you__need__vienthuoc, .you__need__xanh {
     position: absolute;
@@ -326,10 +333,7 @@ body {
     padding-top: 20px;
 }
 .solution__content {
-    margin-top: 90px;
-}
-.solution__content .card_2 {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .section__title{
@@ -523,7 +527,7 @@ body {
 
 .card {
     border: none;
-    height: 305px;
+    /*height: 305px;*/
 }
 
 .swiper-pagination {
@@ -558,7 +562,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.btn__xemthem button {
+.btn__xemthem a {
     width: 190px;
     height: 48px;
     border-radius: 10px;
@@ -786,6 +790,12 @@ body {
     font-size: 21px;
     font-weight: bold;
 }
+.page-main-post .post-relate ul li{
+    padding: 5px 0px 0px 10px;
+}
+.page-main-post .post-relate ul li a{
+    color: #f6a441;
+}
 .page-main-post .tinlienquan {
     margin-top: 50px;
 }
@@ -805,18 +815,25 @@ body {
     font-weight: bold;
     padding: 10px 0px;
 }
-.page-main-post .tinlienquan .box-img {
-    padding: 10px 10px 0 10px;
-}
+/*.page-main-post .tinlienquan .box-img {*/
+/*    padding: 10px 10px 0 10px;*/
+/*}*/
 .page-main-post .tinlienquan .box-img img {
     width: 100%;
+    max-height: 55px;
 }
 .page-main-post .tinlienquan .box-text {
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
-
+.page-link{
+    color: #5265c1;
+}
+.page-item.active .page-link{
+    background-color: #5265c1;
+    border-color: #5265c1;
+}
 @media (min-width: 768px) {
     .featured-post .row {
         margin-left: -0.65625vw;
